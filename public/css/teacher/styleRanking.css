@@ -1,0 +1,20 @@
+body {
+    background: rgb(3,7,20);
+    background: -moz-linear-gradient(90deg, rgba(3,7,20,1) 0%, rgba(10,21,61,1) 25%, rgba(122,7,94,1) 50%, rgba(10,21,61,1) 75%, rgba(3,7,20,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(3,7,20,1) 0%, rgba(10,21,61,1) 25%, rgba(122,7,94,1) 50%, rgba(10,21,61,1) 75%, rgba(3,7,20,1) 100%);
+    background: linear-gradient(90deg, rgba(3,7,20,1) 0%, rgba(10,21,61,1) 25%, rgba(122,7,94,1) 50%, rgba(10,21,61,1) 75%, rgba(3,7,20,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#030714",endColorstr="#030714",GradientType=1);
+}
+
+.table {
+    border-radius: 15px;
+    overflow: hidden; /* Para que los bordes redondeados se apliquen correctamente */
+}
+
+.navbar {
+    background: rgb(3,7,20);
+    background: -moz-linear-gradient(90deg, rgba(3,7,20,1) 0%, rgba(10,21,61,1) 25%, rgba(122,7,94,1) 50%, rgba(10,21,61,1) 75%, rgba(3,7,20,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(3,7,20,1) 0%, rgba(10,21,61,1) 25%, rgba(122,7,94,1) 50%, rgba(10,21,61,1) 75%, rgba(3,7,20,1) 100%);
+    background: linear-gradient(90deg, rgba(3,7,20,1) 0%, rgba(10,21,61,1) 25%, rgba(122,7,94,1) 50%, rgba(10,21,61,1) 75%, rgba(3,7,20,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#030714",endColorstr="#030714",GradientType=1);
+}

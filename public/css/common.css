@@ -1,0 +1,91 @@
+:root {
+    --black: #232b2b;
+    --white: #F5F5F5;
+    --lightGray: #999999;
+    --neutralGray: #777777;
+    --darkGray: #555555;
+    --lightBlue: #CEDCFF;
+    --babyBlue: #6587F6;
+    --mutedBlue: #4E5F96;
+    --darkBlue: #1F2A4D;
+    --skyBlue: #00D4FF;
+    --darkSkyBlue: #00829C;
+    --lightPurple: #B00ECC;
+    --darkPurple: #7A075E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--white);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Rubik", sans-serif;
+    font-weight: 800;
+    color: var(--white);
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-size: calc(0.75vw + 0.75vh);
+    color: var(--white);
+}
+
+.whiteBg {
+    color: var(--black);
+}
+
+i#navButton {
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+i#navButton:hover {
+    text-shadow: 0 0 50px var(--white),
+    20px 0 80px var(--lightPurple),
+    -20px 0 80px var(--darkSkyBlue),
+    20px 0 300px var(--lightPurple),
+    -20px 0 300px var(--darkSkyBlue),
+    0 0 50px var(--white),
+    10px 0 400px var(--lightPurple);
+    transform: scale(1.2);
+}
+
+li.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li#homeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 12vh;
+    width: 12vh;
+    box-shadow: inset 0 0 50px var(--white),
+              inset 20px 0 80px var(--lightPurple),
+              inset -20px 0 80px var(--skyBlue),
+              inset 20px 0 300px var(--lightPurple),
+              inset -20px 0 300px var(--skyBlue),
+              0 0 50px var(--white),
+              10px 0 400px var(--lightPurple);
+    transition: all 0.5s ease-in-out;
+}
+
+li#homeButton:hover {
+    box-shadow: inset 0 0 50px var(--white),
+              inset 20px 0 80px var(--mutedBlue),
+              inset -20px 0 80px var(--skyBlue),
+              inset 20px 0 300px var(--mutedBlue),
+              inset -20px 0 300px var(--skyBlue),
+              0 0 50px var(--white),
+              10px 0 400px var(--mutedBlue);
+    transform: scale(1.2);
+}

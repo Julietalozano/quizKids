@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Site Styles -->
+  <link href="/css/student/styleRanking.css" rel="stylesheet">
+
+  <title>Quiz Kids</title>
+
+  <!-- Fonts, Kits and Bootstrap -->
+  <%- include("../partials/headers.ejs") %>
+</head>
+
+<!-- html body -->
+<body>
+  <!-- navbar -->
+  <%- include("../partials/student/navbar.ejs") %>
+
+  <!-- ranking -->
+  <div class="container-fluid">
+    <div class="row d-flex flex-wrap align-items-center">
+      <!-- Primer alumno en el centro -->
+      <div class="col-lg-6 col-md-6 col-12 text-center order-lg-2 order-md-2 order-1">
+        <img src="<%= ranking[0].avatarPath %>" alt="user-avatar" class="img-fluid">
+        <h3><%= ranking[0].nombre %></h3>
+        <p class="fw bold">Ranking: 1</p>
+        <p class="fw bold">Puntos: <%= ranking[0].total_puntaje %></p>
+      </div>
+      <!-- Segundo y tercer alumno a los lados -->
+      <% if (ranking.length > 1) { %>
+        <div class="col-lg-3 col-md-3 col-6 text-center order-lg-1 order-md-1 order-2">
+          <img src="<%= ranking[1].avatarPath %>" alt="user-avatar" class="img-fluid">
+          <h3><%= ranking[1].nombre %></h3>
+          <p class="fw bold">Ranking: 2</p>
+          <p class="fw bold">Puntos: <%= ranking[1].total_puntaje %></p>
+        </div>
+      <% } %>
+      <% if (ranking.length > 2) { %>
+        <div class="col-lg-3 col-md-3 col-6 text-center order-lg-3 order-md-3 order-3">
+          <img src="<%= ranking[2].avatarPath %>" alt="user-avatar" class="img-fluid">
+          <h3><%= ranking[2].nombre %></h3>
+          <p class="fw bold">Ranking: 3</p>
+          <p class="fw bold">Puntos: <%= ranking[2].total_puntaje %></p>
+        </div>
+      <% } %>
+    </div>
+
+    <!-- Personal Ranking -->
+    <div class="row mt-5">
+      <div class="col-12 text-center">
+        <h3>Personal Ranking: <%= personalRanking %></h3>
+        <p>de <%= totalAlumnos %></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+

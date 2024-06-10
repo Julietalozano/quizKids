@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Site Styles -->
+    <link href="../css/student/styleTestIt.css" rel="stylesheet" />
+
+    <title>Quiz Kids</title>
+
+    <!-- Fonts, Kits and Bootstrap -->
+    <%- include("../partials/headers.ejs") %>
+
+    <style>
+      body {
+        color: black;
+      }
+
+      .card-text {
+        color: black !important;
+      }
+    </style>
+  </head>
+
+  <!-- html body -->
+  <body>
+    <!-- navbar -->
+    <%- include("../partials/student/navbar.ejs") %>
+
+    <!-- Results Section -->
+    <div class="container mt-5">
+      <div
+        class="row d-flex flex-wrap align-items-center justify-content-center"
+      >
+        <div class="col-12 text-center">
+          <h2>Resultados del Quiz</h2>
+          <p>
+            Score:
+            <strong
+              ><%= results.reduce((acc, result) => acc + (result.correcta ? 1 :
+              0), 0) %></strong
+            >
+          </p>
+          <p>
+            Nivel de Confianza Promedio: <strong><%= nivel_confianza %></strong>
+          </p>
+        </div>
+        <div class="col-12 mt-3">
+          <div class="row">
+            <% results.forEach((result, index) => { %>
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+              <div class="card h-100">
+                <div class="card-header">
+                  Pregunta <%= index + 1 %>: <%= result.pregunta %>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Respuesta Correcta: <%= result.correcta ? 'Sí' : 'No' %>
+                  </p>
+                  <p class="card-text">
+                    Puntos: <%= result.correcta ? '1/1' : '0/1' %>
+                  </p>
+                  <p class="card-text">Respuestas:</p>
+                  <ul>
+                    <% result.respuestas.forEach(respuesta => { %>
+                    <li class="<%= respuesta.correcta ? 'text-success' : '' %>">
+                      <%= respuesta.texto %>
+                    </li>
+                    <% }) %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

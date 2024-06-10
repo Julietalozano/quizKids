@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Site Styles -->
+    <link href="../css/teacher/styleHome.css" rel="stylesheet">
+
+    <title>Quiz Kids</title>
+
+    <!-- Fonts, Kits and Bootstrap -->
+    <%- include("../partials/headers.ejs") %>
+  </head>
+
+  <!-- html body -->
+  <body>
+    <!-- navbar -->
+    <%- include("../partials/professor/navbar.ejs") %>
+
+    <!-- test it -->
+    <div class="container-fluid" id="testIt">
+      <div class="row d-flex flex-wrap align-items-center">
+        <div class="col-6 text-center">
+          <img src="../imgs/book.png" alt="book" class="img-fluid">     
+        </div>
+        <div class="col-5">
+          <h1 class="mt-5">Engage Your Students with Interactive Quizzes</h1>
+          <p class="text-start">Welcome to our dynamic quiz platform, designed to make teaching both fun and 
+            effective! Our game allows you, as an educator, to create custom questions on a variety of subjects
+            such as math, science, art, history, and more. Students can join the game, answer questions, and 
+            earn points based on their performance. These points contribute to their overall ranking, motivating
+            them to enhance their knowledge and engage in healthy competition with their peers. It's an excellent
+            tool to assess student understanding and reinforce learning in an enjoyable and competitive 
+            environment. Are you ready to inspire your students and watch them climb to the top of the leaderboard?
+          </p>
+          <a href="/quizzes/new" class="btn" id="testItButton"><h1 id="testItButton">Quiz it!</h1></a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- learn it -->
+    <div class="container-fluid">
+      <div class="row d-flex flex-wrap align-items-center">
+        <div class="col text-center">
+          <h1 class="mt-5 whiteBg">Prepare Your Students Effectively</h1>
+          <div class="col-10 offset-1">
+            <p class="whiteBg">Organiza y administra tus clases de manera efectiva. Nuestra herramienta te permite crear
+               y gestionar clases fácilmente, facilitando la educación de tus estudiantes. Añade nuevas clases, asigna 
+               categorías y configura los detalles necesarios para una enseñanza eficiente y personalizada.</p>
+          </div>
+          <div class="container">
+            <h1 class="mb-4">Crear Nueva Clase</h1>
+            <form action="/classes/create" method="POST">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label"><h2 class="whiteBg">Class name:</h2></label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <button type="submit" class="btn" id="learnItButton"><h1 id="learnItButton">Create class</h1></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- more about us-->
+    <div class="container-fluid mt-5 aboutUs">
+      <div class="row">
+        <div class="col-10 offset-1">
+          <h1 class="mt-5 whiteBg">Want to learn more about us?</h1>
+        </div>
+      </div>
+      <div class="row d-flex flex-wrap align-items-start">
+        <div class="col-5 offset-1">
+          <p class="whiteBg">Curious about who we are and how we create our engaging learning experiences? 
+            Our mission is to make education enjoyable and effective through interactive quizzes and comprehensive
+            study tools. Discover the story behind our platform, meet the team dedicated to enhancing your 
+            learning journey, and learn about the innovative technologies we use to develop our content. 
+            We believe in the power of gamified learning to inspire and educate students of all ages.
+            Ready to dive deeper into our world?</p>
+          <a href="https://drive.google.com/drive/folders/1PtD5w27vJv8Elit71kw0bBGrXYkLPo82?usp=sharing" class="btn"><h1 class="whiteBg" id="aboutUs">About us</h1></a>
+        </div>
+        <div class="col-6">
+          <img src="../imgs/folder.png" alt="folder" class="img-fluid">
+        </div>
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

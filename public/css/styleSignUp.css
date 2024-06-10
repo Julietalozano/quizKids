@@ -1,0 +1,148 @@
+body {
+    background: rgb(122,7,94);
+    background: -moz-linear-gradient(90deg, rgba(122,7,94,1) 0%, rgba(176,14,204,1) 35%, rgba(0,212,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(122,7,94,1) 0%, rgba(176,14,204,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(122,7,94,1) 0%, rgba(176,14,204,1) 35%, rgba(0,212,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7a075e",endColorstr="#00d4ff",GradientType=1);
+}
+
+p{
+    color: var(--black);
+    font-size: medium;
+}
+
+::placeholder {
+    color: var(--lightGray) !important;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.btn {
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn:focus {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.btn:hover {
+    color: var(--darkPurple);
+    border-bottom: 2px solid var(--lightGray);   
+}
+
+div.row {
+    height: 100vh;
+}
+
+div.card {
+    width: 50vh;
+}
+
+input:focus {
+    box-shadow: none !important;
+}
+
+input:focus::placeholder{
+    color: transparent;
+    opacity: 0;
+}
+
+input.form-control {
+    border-radius: 0;
+    border: 0;
+    border-bottom: 2px solid var(--lightGray);
+    transition: all 0.5s ease-in-out;
+}
+
+input.form-control:focus {
+    border-color: var(--darkGray);
+}
+
+input#inputFirstName {
+    background-image: url("/imgs/signature-solid.svg");
+    background-repeat: no-repeat;
+    background-size: 3.5vh;
+    background-position: left center;
+    text-indent: 4vh;
+}
+
+input#inputFirstName:focus {
+    background-image: url("/imgs/signature-solid-purple.svg");
+}
+
+input#inputLastName {
+    background-image: url("/imgs/signature-solid.svg");
+    background-repeat: no-repeat;
+    background-size: 3.5vh;
+    background-position: left center;
+    text-indent: 4vh;
+}
+
+input#inputLastName:focus {
+    background-image: url("/imgs/signature-solid-purple.svg");
+}
+
+input#inputBirthdate {
+    background-image: url("/imgs/cake-candles-solid.svg");
+    background-repeat: no-repeat;
+    background-size: 3vh;
+    background-position: left center;
+    text-indent: 4vh;
+}
+
+input#inputBirthdate:focus {
+    background-image: url("/imgs/cake-candles-solid-purple.svg");
+}
+
+input#inputEmail {
+    background-image: url("/imgs/user-solid.svg");
+    background-repeat: no-repeat;
+    background-size: 2.5vh;
+    background-position: left center;
+    text-indent: 4vh;
+}
+
+input#inputEmail:focus {
+    background-image: url("/imgs/user-solid-purple.svg");
+}
+
+input#inputPassword {
+    background-image: url("/imgs/lock-solid.svg");
+    background-repeat: no-repeat;
+    background-size: 2.5vh;
+    background-position: left center;
+    text-indent: 4vh;
+}
+
+input#inputPassword:focus {
+    background-image: url("/imgs/lock-solid-purple.svg");
+}
+
+input#inputCity {
+    background-image: url("/imgs/city-solid.svg");
+    background-repeat: no-repeat;
+    background-size: 3.5vh;
+    background-position: left center;
+    text-indent: 4vh;
+}
+
+input#inputCity:focus {
+    background-image: url("/imgs/city-solid-purple.svg");
+}
+
+button#loginButton {
+    border: none;
+    border-radius: 20px;
+    color: var(--white);
+    font-weight: bold;
+    background: rgb(0,212,255);
+    background: radial-gradient(circle, rgba(122,7,94,1) 0%, rgba(0,212,255,1) 100%);
+    transition: all 0.5s ease-in-out;    
+}
+
+button#loginButton:hover {
+    background-position: 45vh;
+}

@@ -1,0 +1,95 @@
+body {
+    background: rgb(3,7,20);
+    background: -moz-linear-gradient(90deg, rgba(3,7,20,1) 0%, rgba(64,7,58,1) 50%, rgba(176,14,204,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(3,7,20,1) 0%, rgba(64,7,58,1) 50%, rgba(176,14,204,1) 100%);
+    background: linear-gradient(90deg, rgba(3,7,20,1) 0%, rgba(64,7,58,1) 50%, rgba(176,14,204,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#030714",endColorstr="#b00ecc",GradientType=1);
+}
+
+::placeholder {
+    color: var(--lightGray) !important;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.btn {
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn:focus {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.btn:hover {
+    color: var(--darkPurple);
+    border-bottom: 2px solid var(--lightGray);   
+}
+
+.navbar {
+    background: rgb(3,7,20);
+    background: -moz-linear-gradient(90deg, rgba(3,7,20,1) 0%, rgba(64,7,58,1) 50%, rgba(176,14,204,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(3,7,20,1) 0%, rgba(64,7,58,1) 50%, rgba(176,14,204,1) 100%);
+    background: linear-gradient(90deg, rgba(3,7,20,1) 0%, rgba(64,7,58,1) 50%, rgba(176,14,204,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#030714",endColorstr="#b00ecc",GradientType=1);
+}
+
+input:focus {
+    box-shadow: none !important;
+}
+
+input:focus::placeholder{
+    color: transparent;
+    opacity: 0;
+}
+
+input.form-control {
+    border-radius: 0;
+    border: 0;
+    border-bottom: 2px solid var(--lightGray);
+    transition: all 0.5s ease-in-out;
+}
+
+input.form-control:focus {
+    border-color: var(--darkGray);
+}
+
+input#inputQuestion {
+    background-image: url("/imgs/book-solid.svg");
+    background-repeat: no-repeat;
+    background-size: 2.5vh;
+    background-position: left center;
+    text-indent: 4vh;
+}
+
+input#inputQuestion:focus {
+    background-image: url("/imgs/book-solid-purple.svg");
+}
+
+input#inputAnswer {
+    background-image: url("/imgs/pen-solid.svg");
+    background-repeat: no-repeat;
+    background-size: 2.5vh;
+    background-position: left center;
+    text-indent: 4vh;
+}
+
+input#inputAnswer:focus {
+    background-image: url("/imgs/pen-solid-purple.svg");
+}
+
+button#loginButton {
+    border: none;
+    border-radius: 20px;
+    color: var(--white);
+    font-weight: bold;
+    background: rgb(64,7,58);
+    background: radial-gradient(circle, rgba(64,7,58,1) 0%, rgba(176,14,204,1) 50%);
+    transition: all 0.5s ease-in-out;    
+}
+
+button#loginButton:hover {
+    background-position: 85vh;
+}

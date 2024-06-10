@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Site Styles -->
+    <link href="../css/student/styleTestIt.css" rel="stylesheet">
+
+    <title>Quiz Kids</title>
+
+    <!-- Fonts, Kits and Bootstrap -->
+    <%- include("../partials/headers.ejs") %>
+
+<body>
+    <!-- navbar -->
+    <%- include("../partials/student/navbar.ejs") %>
+
+    <div class="container mt-5">
+        <div class="filter-container mb-4">
+            <form id="filterForm" class="d-flex align-items-center">
+                <label for="categoria" class="form-label me-2">Filter by categories:</label>
+                <select id="categoria" name="categoria" class="form-select" onchange="document.getElementById('filterForm').submit()">
+                    <option value="Todas" <%= categoriaSeleccionada === 'Todas' ? 'selected' : '' %>>Todas</option>
+                    <% for (var i = 0; i < Categorias.length; i++) { %>
+                        <option value="<%= Categorias[i] %>" <%= categoriaSeleccionada === Categorias[i] ? 'selected' : '' %>><%= Categorias[i] %></option>
+                    <% } %>
+                </select>
+            </form>
+        </div>
+
+        <div class="card-container row row-cols-1 row-cols-md-2 g-4">
+            <% for (var i = 0; i < quizzes.length; i++) { %>
+                <% var cardClass = quizzes[i].contestado ? 'contestado' : ''; %>
+                <% if (quizzes[i].contestado) { %>
+                    <% var score = 0; // Aquí debes obtener el score real de la base de datos %>
+                    <% cardClass += score >= 7 ? ' score-alto' : ' score-bajo'; %>
+                <% } %>
+                <div class="col">
+                    <div class="card <%= cardClass %>">
+                        <div class="card-body">
+                            <a href="<%= quizzes[i].contestado ? '/quiz-result?quizId=' + quizzes[i].id : '/take-quiz?quizId=' + quizzes[i].id %>" 
+                               data-quiz-id="<%= quizzes[i].id %>" 
+                               class="text-decoration-none <%= quizzes[i].contestado ? 'contestados' : '' %>">
+                               <h5 class="card-title"><%= quizzes[i].nombre %></h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var quizLinks = document.querySelectorAll('a.contestados');
+      
+     /*   quizLinks.forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                alert('Este quiz ya ha sido contestado.');
+            });
+        });*/
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
+
+    <!-- Fonts, Kits and Bootstrap -->
+    <%- include("partials/headers.ejs") %>
+
+    <!-- Site Styles -->
+    <link href="css/styleSignUp.css" rel="stylesheet">
+
+  <body>
+    <!-- login/signup card-->
+    <!-- card container -->
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-auto">
+          <div class="card">
+            <div class="card-body">
+              <h1 class="card-title text-center mt-3 mb-5">
+                Sign up
+              </h1>
+              <form action="/registrar-usuario" method="post">
+              <div class="mb-3">
+                <label for="inputFirstName" class="form-label">First name</label>
+                <input type="text" class="form-control" name="nombre" id="inputFirstName" placeholder="Type your first name" required>
+              </div>
+              <div class="mb-3">
+                <label for="inputLastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" name="apellido" id="inputLastName" placeholder="Type your last name" required>
+              </div>
+              <div class="mb-3">
+                <label for="inputEmail" class="form-label">Email adress</label>
+                <input type="email" class="form-control" name="correo" id="inputEmail" placeholder="Type your email" required>
+              </div>
+              <div class="mb-3">
+                <label for="contraseña" class="form-label">Password</label>
+                <input type="password" class="form-control" name="contraseña" id="inputPassword" placeholder="Type your password" required>
+                <div class="mt-2">
+                  <input type="checkbox" class="form-check-input" id="showPasswordCheck" onclick="showPassword()">
+                  <label for="showPasswordCheck" class="form-check-label">Show password</label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="fNacimiento" class="form-label">Birthdate</label>
+                <input type="date" class="form-control" name="fNacimiento" id="inputBirthdate" required>
+              </div>
+              <div class="mb-3">
+                <p>Genre</p>
+                <div class="form-check">
+                  <label for="hombre" class="form-check-label">Man</label>
+                  <input type="radio" class="form-check-input" id="man" name="sexo" value="hombre" required>
+                </div>
+                <div class="form-check">
+                  <label for="mujer" class="form-check-label">Woman</label>
+                  <input type="radio" class="form-check-input" id="woman" name="sexo" value="mujer" required>
+                </div>
+                <div class="form-check">
+                  <label for="otro" class="form-check-label">Other</label>
+                  <input type="radio" class="form-check-input" id="other" name="sexo" value="otro" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="pais" class="form-label">Country:</label>
+                <select class="form-select" name="pais" id="country" required>
+                  <option selected disabled value="">Select an option</option>
+                  <option value="mex">Mexico</option>
+                  <option value="usa">USA</option>
+                  <option value="spa">Spain</option>
+                  <option value="arg">Argentina</option>
+                </select>
+            </div>
+              <div class="mb-3">
+                <label for="ciudad" class="form-label">City</label>
+                <input type="text" class="form-control" name="ciudad" id="inputCity" placeholder="Type your city" required>
+              </div>
+              <div class="mb-3">
+                <label for="tipoDeUsuario" class="form-label">User type:</label>
+                <select class="form-select" name="tipoUsuario" id="userType" required>
+                  <option selected disabled value="">Select an option</option>
+                  <option value="alumno">Student</option>
+                  <option value="profesor">Teacher</option>
+                </select>
+            </div>
+              <div class="d-grid mx-auto mt-5">
+                <button type="submit" class="btn" id="loginButton">Sign up</button>
+              </div>
+              </form>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <p class="text-center mt-5">Already have an account?</p>
+                  <div class="d-grid mx-auto">
+                    <a href="/login" class="btn">LOG IN</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

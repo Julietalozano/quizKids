@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Site Styles -->
+    <link href="../css/teacher/styleResult.css" rel="stylesheet">
+  
+    <title>Quiz Kids</title>
+  
+    <!-- Fonts, Kits and Bootstrap -->
+    <%- include("../partials/headers.ejs") %>
+</head>
+<body>
+    <body>
+        <div class="container mt-4 result-container">
+            <h1 class="text-center">Resultados del Quiz</h1>
+            <p><strong>Alumno:</strong> <%= result.alumno %></p>
+            <p><strong>Quiz:</strong> <%= result.quiz %></p>
+            <p><strong>Puntaje:</strong> <%= result.puntaje %></p>
+            <p><strong>Nivel de Confianza:</strong> <%= result.nivel_confianza %></p>
+            <p><strong>Rendimiento:</strong> <%= rendimiento.toFixed(2) %></p>
+            <h2>Detalles:</h2>
+            <% if (preguntas.length > 0) { %>
+                <% preguntas.forEach((pregunta, index) => { %>
+                    <div class="question">
+                        <h3>Pregunta <%= index + 1 %>: <%= pregunta.contenido %></h3>
+                        <% 
+                            let esCorrecta = false;
+                            if (Array.isArray(result.resultados)) {
+                                const respuestaAlumno = result.resultados.find(res => res.id_pregunta === pregunta.id_pregunta);
+                                esCorrecta = respuestaAlumno ? respuestaAlumno.correcta : false;
+                            }
+                        %>
+                        <p>Respuesta Correcta: <%= esCorrecta ? 'Sí' : 'No' %></p>
+                        <p>Puntos: <%= esCorrecta ? '1' : '0' %>/1</p>
+                        <p>Respuestas:</p>
+                        <ul>
+                            <% pregunta.respuestas.split(',').forEach(resp => { %>
+                                <li><%= resp %></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>No hay detalles disponibles para este quiz.</p>
+            <% } %>
+        </div>
+</html>

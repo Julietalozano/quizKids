@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Site Styles -->
+    <link href="../css/student/styleTestIt.css" rel="stylesheet">
+
+    <title>Quiz Kids</title>
+
+    <!-- Fonts, Kits and Bootstrap -->
+    <%- include("../partials/headers.ejs") %>
+    
+    <style>
+        .btn {
+            color: var(--black);
+            background-color: var(--white);
+            transition: all 0.5s ease-in-out;
+            border: none;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            color: var(--black);
+            background-color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="result-container text-center">
+          <h1>Your Quiz Result</h1>
+          <p class="fs-4">Score = <strong><%= score %></strong></p>
+          <a href="/student" class="btn btn-primary">Go Back</a>
+        </div>
+      </div>
+</body>
+</html>

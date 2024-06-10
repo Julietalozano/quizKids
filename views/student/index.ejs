@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Site Styles -->
+    <link href="../css/student/styleHome.css" rel="stylesheet">
+
+    <title>Quiz Kids</title>
+
+    <!-- Fonts, Kits and Bootstrap -->
+    <%- include("../partials/headers.ejs") %>
+  </head>
+
+  <!-- html body -->
+  <body>
+    <!-- navbar -->
+    <%- include("../partials/student/navbar.ejs") %>
+
+    <!-- test it -->
+    <div class="container-fluid" id="testIt">
+      <div class="row d-flex flex-wrap align-items-center">
+        <div class="col-6 text-center">
+          <img src="../imgs/book.png" alt="book" class="img-fluid">     
+        </div>
+        <div class="col-5">
+          <h1 class="mt-5">Test your knowledge</h1>
+          <p class="text-start">Welcome to our interactive quiz platform, designed to make learning fun and engaging!
+              Our game allows teachers to create custom questions on a variety of subjects such as math, science, art,
+              history, and more. Students can join the game, answer questions, and earn points based on their
+              performance. These points contribute to their overall ranking, motivating them to improve their knowledge
+              and compete with their peers. It's a perfect way to test your understanding and reinforce what you've 
+              learned in a playful and competitive environment.
+              Are you ready to challenge yourself and climb to the top of the leaderboard?</p>
+          <a href="./testIt" class="btn" id="testItButton"><h1 id="testItButton">Test it!</h1></a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- learn it -->
+    <div class="container-fluid">
+      <div class="row d-flex flex-wrap align-items-center">
+        <div class="col text-center">
+          <h1 class="mt-5 whiteBg">Need to study beforehand?</h1>
+          <div class="col-10 offset-1">
+            <p class="whiteBg">Prepare yourself with our comprehensive learning resources before diving into the 
+              quiz! Our Learn It section offers a variety of courses on different subjects and other valuable 
+              student tools. You can read PDFs and utilize our AI-powered tool to generate questions from your 
+              study materials, helping you grasp the content better. Whether you need to brush up on a topic or 
+              dive deep into new material, we've got you covered.
+              Ready to boost your knowledge and ace the game?
+              </p>
+          </div>
+          <a href="./learnIt" class="btn" id="learnItButton"><h1 id="learnItButton">Learn it!</h1></a> 
+        </div>
+      </div>
+    </div>
+
+    <!-- more about us-->
+    <div class="container-fluid mt-5 aboutUs">
+      <div class="row">
+        <div class="col-10 offset-1">
+          <h1 class="mt-5 whiteBg">Want to learn more about us?</h1>
+        </div>
+      </div>
+      <div class="row d-flex flex-wrap align-items-start">
+        <div class="col-5 offset-1">
+          <p class="whiteBg">Curious about who we are and how we create our engaging learning experiences? 
+            Our mission is to make education enjoyable and effective through interactive quizzes and comprehensive
+            study tools. Discover the story behind our platform, meet the team dedicated to enhancing your 
+            learning journey, and learn about the innovative technologies we use to develop our content. 
+            We believe in the power of gamified learning to inspire and educate students of all ages.
+            Ready to dive deeper into our world?</p>
+          <a href="https://drive.google.com/drive/folders/1PtD5w27vJv8Elit71kw0bBGrXYkLPo82?usp=sharing" class="btn"><h1 class="whiteBg" id="aboutUs">About us</h1></a>
+        </div>
+        <div class="col-6">
+          <img src="../imgs/folder.png" alt="folder" class="img-fluid">
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid" id="playIt">
+      <div class="row d-flex flex-wrap align-items-center">
+        <div class="text-center my-5" >
+          <h1 class="mt-5 text-center">Play our game!</h1>
+          <p class="text-center col-10 offset-1">Welcome to our fun and delightful Hello Kitty game, inspired by the popular
+            Flappy Bird! In this game, you'll guide Hello Kitty through a series of obstacles, tapping the screen to keep 
+            her flying and avoiding the barriers. It's a charming and challenging way to test your reflexes and timing. 
+            Perfect for Hello Kitty fans of all ages, our game combines cute graphics with engaging gameplay to keep you 
+            entertained for hours. Are you ready to take on the challenge and help Hello Kitty soar to new heights?
+          </p>
+          <a target="_blank" id="game" class="btn my-3" href="https://julietaalozanoo.itch.io/kittygame"><h1 id="game">Kitty flapperia</h1></a>
+        </div>
+      </div>
+    </div>
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

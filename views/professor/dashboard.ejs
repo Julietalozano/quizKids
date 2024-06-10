@@ -1,0 +1,57 @@
+<!-- views/professor-dashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Site Styles -->
+    <link href="../css/teacher/styleDashboard.css" rel="stylesheet">
+
+    <title>Quiz Kids</title>
+
+    <!-- Fonts, Kits and Bootstrap -->
+    <%- include("../partials/headers.ejs") %>
+    <script>
+        function showQuizResult(alumnoId, quizId) {
+            const url = `/professor/quiz-result?alumnoId=${alumnoId}&quizId=${quizId}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <!-- navbar -->
+    <%- include("../partials/professor/navbar.ejs") %>
+
+
+    <div class="container mt-4">
+        <h1 class="text-center">Professor Dashboard</h1>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Alumno</th>
+                    <% quizzes.forEach(([quizId, quizName]) => { %>
+                        <th scope="col"><%= quizName %></th>
+                    <% }) %>
+                </tr>
+            </thead>
+            <tbody>
+                <% alumnos.forEach(alumno => { %>
+                    <tr>
+                        <td><%= alumno.alumno %></td>
+                        <% quizzes.forEach(([quizId, quizName]) => { %>
+                            <td>
+                                <% if (alumno.quizzes[quizName]) { %>
+                                    <a href="javascript:void(0);" onclick="showQuizResult('<%= alumno.id %>', '<%= quizId %>')"><%= alumno.quizzes[quizName] %></a>
+                                <% } else { %>
+                                    <%= '' %>
+                                <% } %>
+                            </td>
+                        <% }) %>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Site Styles -->
+    <link href="../css/teacher/styleCreateQuiz.css" rel="stylesheet">
+
+    <title>Quiz Kids</title>
+
+    <!-- Fonts, Kits and Bootstrap -->
+    <%- include("../partials/headers.ejs") %>
+  </head>
+<body>
+    <!-- navbar -->
+    <%- include("../partials/professor/navbar.ejs") %>
+
+    <div class="container mt-5">
+        <div id="quiz" class="card p-4">
+            <form id="quiz-form" method="POST" action="/quizzes/create">
+                <input type="hidden" name="id_clase" value="<%= id_clase %>"> <!-- Campo oculto para id_clase -->
+
+                <div class="mb-3">
+                    <label for="nombreQuiz" class="form-label">Quiz name</label>
+                    <input type="text" name="nombreQuiz" id="nombreQuiz" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="categoria" class="form-label">Category</label>
+                    <select name="categoria" id="categoria" class="form-select" required>
+                        <option value="1">Math</option>
+                        <option value="2">Science</option>
+                        <option value="3">History</option>
+                        <option value="4">Geography</option>
+                        <option value="5">Spanish</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="pregunta" class="form-label">Question</label>
+                    <input type="text" name="pregunta" id="pregunta" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="respuesta1" class="form-label">Answer 1</label>
+                    <input type="text" name="respuesta1" id="respuesta1" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="respuesta2" class="form-label">Answer 2</label>
+                    <input type="text" name="respuesta2" id="respuesta2" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="respuesta3" class="form-label">Answer 3</label>
+                    <input type="text" name="respuesta3" id="respuesta3" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="respuestaCorrecta" class="form-label">Which answer is correct?</label>
+                    <select name="respuestaCorrecta" id="respuestaCorrecta" class="form-select" required>
+                        <option value="1">Answer 1</option>
+                        <option value="2">Answer 2</option>
+                        <option value="3">Answer 3</option>
+                    </select>
+                </div>
+
+                <button type="button" id="add-question" class="btn btn-outline-primary mb-3">Add question</button>
+                
+                <div id="estados" class="d-flex justify-content-between mb-3">
+                    <div id="pregunta1" class="not-checked p-2 border rounded">1</div>
+                    <div id="pregunta2" class="not-checked p-2 border rounded">2</div>
+                    <div id="pregunta3" class="not-checked p-2 border rounded">3</div>
+                    <div id="pregunta4" class="not-checked p-2 border rounded">4</div>
+                    <div id="pregunta5" class="not-checked p-2 border rounded">5</div>
+                    <div id="pregunta6" class="not-checked p-2 border rounded">6</div>
+                    <div id="pregunta7" class="not-checked p-2 border rounded">7</div>
+                    <div id="pregunta8" class="not-checked p-2 border rounded">8</div>
+                    <div id="pregunta9" class="not-checked p-2 border rounded">9</div>
+                    <div id="pregunta10" class="not-checked p-2 border rounded">10</div>
+                </div>
+        
+                <button type="submit" id="create-quiz" class="btn btn-success">Create Quiz</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div id="modal-content" class="modal-content p-4">
+            <h2>Edit Question</h2>
+            <div class="mb-3">
+                <label for="edit-pregunta" class="form-label">Question</label>
+                <input type="text" id="edit-pregunta" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="edit-respuesta1" class="form-label">Answer 1</label>
+                <input type="text" id="edit-respuesta1" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="edit-respuesta2" class="form-label">Answer 2</label>
+                <input type="text" id="edit-respuesta2" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="edit-respuesta3" class="form-label">Answer 3</label>
+                <input type="text" id="edit-respuesta3" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="edit-respuestaCorrecta" class="form-label">Which answer is correct?</label>
+                <select id="edit-respuestaCorrecta" class="form-select">
+                    <option value="1">Answer 1</option>
+                    <option value="2">Answer 2</option>
+                    <option value="3">Answer 3</option>
+                </select>
+            </div>
+            <button type="button" id="save-edit" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+
+    <script src="../../js/logicaCrearQuiz.js"></script>
+</body>
+</html>

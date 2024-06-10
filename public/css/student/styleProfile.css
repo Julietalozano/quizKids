@@ -1,0 +1,44 @@
+body {
+    background: rgb(0,130,156);
+    background: -moz-linear-gradient(90deg, rgba(0,130,156,1) 0%, rgba(176,14,204,1) 50%, rgba(122,7,94,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,130,156,1) 0%, rgba(176,14,204,1) 50%, rgba(122,7,94,1) 100%);
+    background: linear-gradient(90deg, rgba(0,130,156,1) 0%, rgba(176,14,204,1) 50%, rgba(122,7,94,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00829c",endColorstr="#7a075e",GradientType=1);
+}
+
+img {
+    width: 50%;
+}
+
+p {
+    background-color: var(--white);
+    border-radius: 20px;
+    transition: all 0.5s ease-in-out;
+    color: var(--darkGray);
+}
+
+button{
+    background-color: var(--white) !important;
+    font-weight: bolder !important;
+    transition: all 0.5s ease-in-out !important;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+p:hover {
+    transform: scale(1.05);
+}
+
+.fw-bold {
+    color: var(--darkGray);
+}
+
+.navbar {
+    background: rgb(0,130,156);
+    background: -moz-linear-gradient(90deg, rgba(0,130,156,1) 0%, rgba(176,14,204,1) 50%, rgba(122,7,94,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,130,156,1) 0%, rgba(176,14,204,1) 50%, rgba(122,7,94,1) 100%);
+    background: linear-gradient(90deg, rgba(0,130,156,1) 0%, rgba(176,14,204,1) 50%, rgba(122,7,94,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00829c",endColorstr="#7a075e",GradientType=1);
+}
